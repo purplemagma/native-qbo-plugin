@@ -13,6 +13,7 @@ Clone this repo or get this code to your machine by downloading it. You  need to
 2. In a command-line whose current directory is the root of this source, use npm to install connect - ```npm install connect```. This should create a "node_modules" directory.
 3. ```node webserver.js```
 4. You should see:
+
 ```
 Starting web server listening on port 8443
 Waiting for connections
@@ -29,9 +30,12 @@ Waiting for connections
 2. In the "plugins testing" section, fill out "title" with "my plugin" and ID with "myplugin"
 3. Click "add"
 4. In the large text box, add the following after the "allowed orgins array" but before the ending brace:
-```,"isNative": true,
-    "sourceUrl": "https://localhost:8443/main.js"
+
 ```
+,"isNative": true,
+"sourceUrl": "https://localhost:8443/main.js"
+```
+
 5. Click "Update"
 6. Click "Navigate"
 
