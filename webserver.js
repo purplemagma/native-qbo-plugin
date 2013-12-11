@@ -25,4 +25,6 @@ var app = connect()
     })
     .use(connect.static(__dirname+'/plugin'));
 
+console.log("Starting web server listening on port 8443");
 https.createServer(tlsOptions, app).listen(8443);
+console.log("Waiting for connections");
