@@ -8,7 +8,7 @@ Setting Up
 
 Clone this repo or get this code to your machine by downloading it. You  need to host the .js and .html files on an ssl enabled web server. You also need to set some CORS headers. I find nodeJS with the connect package to be an excellent development web server.
 
-### Node and packages
+### NodeJS and packages
 1. Install nodeJS - on OS X, I use brew http://brew.sh ```brew install node```
 2. In a command-line whose current directory is the root of this source, use npm to install connect - ```npm install connect```. This should create a "node_modules" directory.
 3. ```node webserver.js```
