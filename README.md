@@ -19,6 +19,10 @@ Starting web server listening on port 8443
 Waiting for connections
 ```
 
+### Trust the SSL certificate
+
+For some reason, Chrome is really picky about trusting certificates before allowing CORS calls to go through. You need to import the ssl/server.crt from the sample source into your trusted root store. On Mac, just navigate to native-qbo-plugin/ssl and open the server.crt file. It will open in "Keychain Access". Just select "Always Trust".
+
 ### Sign up for a QBO company in QA
 1. Visit https://qa.qbo.intuit.com/qbo2/redir/startuphere?qbimport=n
 2. In section 1, create a new user id
