@@ -24,7 +24,7 @@ Waiting for connections
 For some reason, Chrome is really picky about trusting certificates before allowing CORS calls to go through. You need to import the ssl/server.crt from the sample source into your trusted root store. On Mac, just navigate to native-qbo-plugin/ssl and open the server.crt file. It will open in "Keychain Access". Just select "Always Trust".
 
 ### Sign up for a QBO company in QA
-1. Visit https://qa.qbo.intuit.com/qbo2/redir/startuphere?qbimport=n
+1. Visit https://qa.qbo.intuit.com/qbo1/redir/startuphere?qbimport=n
 2. In section 1, create a new user id
 3. In section 2, fill out the form
 4. In section 3, accept terms and create a company
@@ -36,11 +36,28 @@ For some reason, Chrome is really picky about trusting certificates before allow
 4. In the large text box, add the following after the "allowed orgins array" but before the ending brace:
 
 ```
-,"isNative": true,
-"sourceUrl": "https://localhost:8443/main.js"
+    ,
+    "isNative": true,
+    "baseSourceUrl": "https://localhost:8443",
+    "sourcePath": "/main.js",
+    "accessPoints": [
+        {
+            "attachPoint": "_apSettingsSettingsList",
+            "linkText": "My Native Plugin"
+        },
+        {
+            "attachPoint": "pageContent",
+            "isNative": true,
+            "position": "replace",
+            "widgetClassName": "qbo/centers/NameViewController",
+            "sourcePath": "/tabs.js"
+        }
+    ]
 ```
 
 5. Click "Update"
 6. Click "Navigate"
 
 You should now see your plugin in the window. The main.js javascript file is the main AMD module where your plugin lives. And main.html is the template for that module. It demonstrates how to bring in a QBO quick fill control and the beginnings of an AngularJS app.
+
+You can also now see your plugin on the "gear" company menu in the upper right. And you can see the tabs.js module if you go into the "Customers" tab.
